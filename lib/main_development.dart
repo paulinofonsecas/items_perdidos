@@ -1,3 +1,7 @@
+// ignore_for_file: deprecated_member_use
+
+import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
@@ -20,6 +24,6 @@ void main() async {
       }
     }
   }
-  
-  bootstrap(() => const App());
+
+  unawaited(bootstrap(() => const App()));
 }
