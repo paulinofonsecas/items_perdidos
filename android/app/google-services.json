@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "757678773753",
+    "project_id": "acahdos",
+    "storage_bucket": "acahdos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:757678773753:android:b55a02f3a1bc4968a89928",
+        "android_client_info": {
+          "package_name": "com.example.verygoodcore.items_perdidos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3puPEGnN8AShcJkgHs-ocXDSF3B6WV_I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
