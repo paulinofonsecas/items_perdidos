@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:items_perdidos/helpers/go_router.dart';
+import 'package:items_perdidos/client/client_home/client_home.dart';
+import 'package:items_perdidos/global_features/login/view/login_page.dart';
 import 'package:items_perdidos/l10n/l10n.dart';
 
 class App extends StatelessWidget {
@@ -7,16 +8,14 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        ),
-        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      routerDelegate: router.routerDelegate,
+      home: const ClientHomePage(),
     );
   }
 }

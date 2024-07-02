@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart' hide EmailAuthProvider;
+import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:items_perdidos/global_features/login/bloc/bloc.dart';
+import 'package:items_perdidos/app/view/login_loading.dart';
 
 /// {@template login_body}
 /// Body of the LoginPage.
@@ -12,10 +14,19 @@ class LoginBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<LoginBloc, LoginState>(
-      builder: (context, state) {
-        return Center(child: Text(state.customProperty));
-      },
+    return SignInScreen(
+      auth: FirebaseAuth.instance,
+      providers: [EmailAuthProvider()],
+      actions: [
+        AuthStateChangeAction<SignedIn>((context, state) {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const LoginLoadingScreen(),
+            ),
+          );
+        }),
+      ],
     );
   }
 }
+
